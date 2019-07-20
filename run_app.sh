@@ -1,6 +1,8 @@
 #!/bin/bash
 set -ex
 
+[[ $GITHUB_TOKEN = "" ]] && (echo "Please set GITHUB_TOKEN"; exit 1)
+
 virtualenv -p python3 venv || true
 
 source venv/bin/activate
