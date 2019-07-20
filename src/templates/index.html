@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+  <h3>Enter a Github Organization</h3>
+
+  <form class="form-inline" action="/organization-dash">
+    <div class="form-group">
+      <label for="name">Organization Name</label>
+      <input type="text" id="name" name="name" placeholder="e.g. facebook"></input>
+    </div>
+    <button type="submit" class="btn">Load Organization</button>
+  </form>
+
+{% endblock %}

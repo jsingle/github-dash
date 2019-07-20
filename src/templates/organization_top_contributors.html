@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h2>Organization Top Contributors: {{ organization_name }}</h2>
+
+<h3>Top Repos By Contributors<h3>
+	{% with table_items=summary_stats['repos_by_contributors'] %}
+	{% include "simple_table.html" %}
+	{% endwith %}
+
+<h3>Top Internal Contributors<h3>
+	{% with table_items=summary_stats['top_internal_contributors'] %}
+	{% include "simple_table.html" %}
+	{% endwith %}
+
+<h3>Top External Contributors<h3>
+	{% with table_items=summary_stats['top_external_contributors'] %}
+	{% include "simple_table.html" %}
+	{% endwith %}
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<h2>Organization Dash: {{ organization_name }}</h2>
+
+<h3>Top Repos By Stars<h3>
+	{% with table_items=summary_stats['repos_by_stars'] %}
+	{% include "simple_table.html" %}
+	{% endwith %}
+
+<h3>Top Repos By Forks<h3>
+	{% with table_items=summary_stats['repos_by_forks'] %}
+	{% include "simple_table.html" %}
+	{% endwith %}
+
+<form action="organization-top-contributors">
+	<input type="hidden" name="name" value="{{ organization_name }}">
+    <button class="btn" type="submit">Load Top Contributor Data</button>
+</form>
+
+{% endblock %}
